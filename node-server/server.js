@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 var mongoClient = mongodb.MongoClient;
 
 //CONNECTION URL
-var url = "mongodb+srv://admin:admin123@cluster0.ahwt8.mongodb.net/barcodes";//"mongodb+srv://cluster0.ahwt8.mongodb.net/myFirstDatabase";
+var url = "<YOUR CONNECTION STRING>";
 
 mongoClient.connect(url, {useNewUrlParser: true}, function(err,client) {
   if(err) {
