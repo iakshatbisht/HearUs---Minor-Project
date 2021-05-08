@@ -24,7 +24,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class AddBarcodeActivity : AppCompatActivity() {
-    val IP_HOST = "https://product-recog-hearus-123.herokuapp.com"
+    val IP_HOST = Configs().BARCODE_SERVER_URL
     var retrofit: Retrofit = Retrofit.Builder()
         .baseUrl(IP_HOST)
         .addConverterFactory(GsonConverterFactory.create())

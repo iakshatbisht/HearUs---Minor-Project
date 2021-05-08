@@ -24,7 +24,7 @@ class ScanCodeActivity : AppCompatActivity(), ZXingScannerView.ResultHandler  {
     private lateinit var mAndroidPermissions: AndroidPermissions
     private lateinit var mPurpose: String
     private lateinit var mTextToSpeechHelper: TextToSpeechHelper
-    val IP_HOST = "https://product-recog-hearus-123.herokuapp.com"
+    val IP_HOST = Configs().BARCODE_SERVER_URL
     var retrofit: Retrofit = Retrofit.Builder()
         .baseUrl(IP_HOST)
         .addConverterFactory(GsonConverterFactory.create())
@@ -87,7 +87,6 @@ class ScanCodeActivity : AppCompatActivity(), ZXingScannerView.ResultHandler  {
     private fun getProductDetailsIfExists(mBarcode: String) {
 
         val getProductService = retrofit.create(ApiBarcode::class.java)
-        Log.d("scan code", "before retrofit call ${mBarcode}, ")
         getProductService.getProduct(mBarcode).enqueue(object : Callback<Product> {
             override fun onResponse(call: Call<Product>, response: Response<Product>) {
                  if(response.isSuccessful) {

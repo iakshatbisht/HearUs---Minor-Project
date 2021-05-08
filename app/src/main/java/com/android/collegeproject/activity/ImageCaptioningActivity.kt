@@ -58,7 +58,7 @@ class ImageCaptioningActivity : AppCompatActivity() {
     private lateinit var backgroundThread: HandlerThread
 
 //    val BASE_URL_IMAGE_CAPTIONING = "https://hear-us-app.herokuapp.com"
-    val BASE_URL_IMAGE_CAPTIONING = "http://${Constants().IP_HOST}:4090"
+    val BASE_URL_IMAGE_CAPTIONING = Configs().IMAGE_CAP_URL
     private lateinit var retrofit: Retrofit
     private lateinit var okHttpClient: OkHttpClient
 

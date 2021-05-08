@@ -51,8 +51,8 @@ public class WeatherActivity extends AppCompatActivity {
     private ImageView mImageViewIcon;
     public WeatherModelClass mBody;
 
-    public String weatherApiKey = "1f4e8778858369c41de84408badb2c1e";
-    public String weatherBaseUrl = "https://api.openweathermap.org/data/";
+    public String weatherApiKey = new Configs().getWEATHER_API_KEY();
+    public String weatherBaseUrl = new Configs().getWEATHER_BASE_URL();
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(weatherBaseUrl)
             .addConverterFactory(GsonConverterFactory.create())

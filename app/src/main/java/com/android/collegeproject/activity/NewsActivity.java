@@ -34,8 +34,8 @@ public class NewsActivity extends AppCompatActivity {
     private Constants constants;
     public NewsModelClass newsModelBody;
     Sources sources;
-    String newsBaseUrl = "https://newsapi.org";
-    String newsApiKey = "6fb753a97d764c93b02631fd32e80df5";
+    String newsBaseUrl = new Configs().getNEWS_BASE_URL();
+    String newsApiKey = new Configs().getNEWS_API_KEY();
 
     FrameLayout mLoader;
     LinearLayout mMainScreen;
